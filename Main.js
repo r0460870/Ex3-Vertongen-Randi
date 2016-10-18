@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true })); /*Parses the text as URL enc
 //E.g. by adding bodyParser, you're ensuring your server handles incoming requests through the express middleware. So, now parsing the body of incoming requests is part of the procedure that your middleware takes when handling incoming requests -- all because you called app.use(bodyParser)
 http://stackoverflow.com/questions/11321635/nodejs-express-what-is-app-use*/
 
-app.get('/', function (req, res) { // Url opvragen.
+app.get('/', function (req, res) { // Url opvragen. responds with tekst wanneer get request wordt uitgevoerd naar homepage
     res.send('typ je opdracht in de adresbalk vb: /calc/2%2B5  (dit is 2+5)'); // Aantonen hoe url werkt aan gebruiker
     
 });
@@ -23,14 +23,14 @@ app.get("/", function (req, res) {
   
  Checken wat elk deel van de code doet om er meer van te begrijpen.
  code overgenomen van Wibren */
-app.get('/calc', function (req, res) {
+app.get('/calc', function (req, res) { // requests to /calc worden via hier gerout.
         
 	console.dir(req.body);  
 	var calc = req.body.bodycalc;
 	
         var antwoord = eval(req.body.bodycalc);
         console.dir(antwoord);
-        res.send(String(antwoord));
+        res.send(String(antwoord));  
         console.log(req.params.opdracht);
 });
 

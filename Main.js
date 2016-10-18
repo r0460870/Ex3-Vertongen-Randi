@@ -7,7 +7,9 @@ var bodyParser = require('body-parser');
  //The bodyParser object exposes various factories to create middlewares. 
  //All middlewares will populate the req.body property with the parsed body, or an empty object ({}) if there was no body to parse (or an error was returned).
 // Variabelen definen. Express 
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(bodyParser.urlencoded({ extended: true })); /*Parses the text as URL encoded data. App uses bodyparser as middleware
+//E.g. by adding bodyParser, you're ensuring your server handles incoming requests through the express middleware. So, now parsing the body of incoming requests is part of the procedure that your middleware takes when handling incoming requests -- all because you called app.use(bodyParser)
+http://stackoverflow.com/questions/11321635/nodejs-express-what-is-app-use*/
 
 app.get('/', function (req, res) { // Url opvragen.
     res.send('typ je opdracht in de adresbalk vb: /calc/2%2B5  (dit is 2+5)'); // Aantonen hoe url werkt aan gebruiker

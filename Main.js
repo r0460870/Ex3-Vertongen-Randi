@@ -15,7 +15,7 @@ app.get('/', function (req, res) { // Url opvragen. responds with tekst wanneer 
     res.send('typ je opdracht in de adresbalk vb: /calc/2%2B5  (dit is 2+5)'); // Aantonen hoe url werkt aan gebruiker
     
 });
-/*
+
 app.get("/", function (req, res) {
     // __dirname = The name of the directory that the currently executing script resides in. https://nodejs.org/docs/latest/api/globals.html#globals_dirname
    res.sendFile( __dirname + '/index.html');

@@ -23,18 +23,20 @@ app.get("/", function (req, res) {
   
  Checken wat elk deel van de code doet om er meer van te begrijpen.
  code overgenomen van Wibren */
-app.get('/calc', function (req, res) { // requests to /calc worden via hier gerout.
+app.get('/calc', function (req, res) { // requests to /calc worden via hier gerout. Functie
         
-	console.dir(req.body);  
+	console.dir(req.body);  //toont properties van het object req.body
 	var calc = req.body.bodycalc;
 	
-        var antwoord = eval(req.body.bodycalc);
-        console.dir(antwoord);
+        var antwoord = eval(req.body.bodycalc); /*Contains key-value pairs of data submitted in the request body. By default, it is undefined, 
+		and is populated when you use body-parsing middleware such as body-parser and multer. 
+		http://expressjs.com/en/api.html*/
+        console.dir(antwoord); //toont properties van var antwoord = eval(req.body.bodycalc)
         res.send(String(antwoord));  
         console.log(req.params.opdracht);
 });
 
-app.get('/calc/:opdracht',function(req, res){ 
+app.get('/calc/:opdracht',function(req, res){  // actual calculations Functie --> bv calc/2%2B10= 2 + 10
         var opdrachtlezen = req.params.opdracht;
         console.log(req.params.opdracht);
         var antwoord = eval(req.params.opdracht);

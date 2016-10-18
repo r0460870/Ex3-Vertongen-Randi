@@ -1,0 +1,19 @@
+{
+  "name": "RestCalc",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "Randi copy wibren",
+  "contributors": [],
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }, "scripts":{
+"start":"node main.js"}
+
+}

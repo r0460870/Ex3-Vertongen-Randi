@@ -1,6 +1,11 @@
-var express = require("express"); //http://stackoverflow.com/questions/9901082/what-is-this-javascript-require Require is Built into nodejs to load modules
-var app = new express(); 
+var express = require("express"); 
+//http://stackoverflow.com/questions/9901082/what-is-this-javascript-require Require is Built into nodejs to load modules Het laad dus een deel van een library, de expressvalue.	
+var app = express(); 
+// 2e deel van de express functie soort van import is soortgelijk aan Object van Class 
+//dus roept de express functie op en zet de express applicatie in de app variabele
 var bodyParser = require('body-parser');
+ //The bodyParser object exposes various factories to create middlewares. 
+ //All middlewares will populate the req.body property with the parsed body, or an empty object ({}) if there was no body to parse (or an error was returned).
 // Variabelen definen. Express 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
@@ -37,4 +42,4 @@ app.get('/calc/:opdracht',function(req, res){
 });
 
 
-app.listen(3456);
+app.listen(3456, function (){console.log(' app listening on port 3456!';};	

@@ -32,17 +32,17 @@ app.get('/calc', function (req, res) { // requests to /calc worden via hier gero
 		and is populated when you use body-parsing middleware such as body-parser and multer. 
 		http://expressjs.com/en/api.html*/
         console.dir(antwoord); //toont properties van var antwoord = eval(req.body.bodycalc)
-        res.send(String(antwoord));  
-        console.log(req.params.opdracht);
+        res.send(String(antwoord));  // maakt een string van antwoord, en toont dit
+        console.log(req.params.opdracht);  // object die mapt naar properties, in dit mapt het naar opdracht calc wordt hier dus uitgelaten. 
 });
 
 app.get('/calc/:opdracht',function(req, res){  // actual calculations Functie --> bv calc/2%2B10= 2 + 10
-        var opdrachtlezen = req.params.opdracht;
-        console.log(req.params.opdracht);
-        var antwoord = eval(req.params.opdracht);
-        console.log(antwoord);
-        res.send(String(antwoord));
-        console.log(req.params.opdracht);
+        var opdrachtlezen = req.params.opdracht;  // Alles na /Calc/ wordt ingelezen in opdrachtlezen
+        console.log(req.params.opdracht); // wordt gelogd
+        var antwoord = eval(req.params.opdracht); // Wordt berekend
+        console.log(antwoord); // wordt opnieuw gelogd
+        res.send(String(antwoord)); // antwoord wordt getoond
+        console.log(req.params.opdracht); //wordt opnieuw gelogd
 });
 
 
